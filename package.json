@@ -1,5 +1,5 @@
 {
-  "name": "create-cascade",
+  "name": "@justpinero/create-cascade",
   "version": "0.1.0",
   "description": "One-command installer for Cascade — AI-powered multi-project orchestration.",
   "type": "module",

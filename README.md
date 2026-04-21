@@ -3,7 +3,7 @@
 One-command installer for **Cascade** — the AI-powered multi-project orchestration dashboard.
 
 ```bash
-npx create-cascade
+npx @justpinero/create-cascade
 ```
 
 ## What it does
