@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "dev": "tsx src/index.ts",
-    "build": "esbuild src/index.ts --bundle --platform=node --target=node22 --outfile=dist/create-cascade.js --format=esm --banner:js=\"#!/usr/bin/env node\" && chmod +x dist/create-cascade.js",
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node22 --outfile=dist/create-cascade.js --format=esm --banner:js=\"#!/usr/bin/env node\"",
     "test": "vitest run",
     "test:watch": "vitest",
     "prepublishOnly": "pnpm build && pnpm test"
