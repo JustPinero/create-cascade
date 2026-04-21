@@ -8,6 +8,8 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    # OIDC trust: no NPM_TOKEN required. npm verifies the workflow identity
+    # against the "Trusted Publisher" config on npmjs.com for this package.
     permissions:
       contents: read
       id-token: write
@@ -29,7 +31,8 @@ jobs:
       - run: pnpm test
       - run: pnpm build
 
+      # npm 11.5.1+ auto-detects OIDC env vars and uses them for auth.
+      # --provenance attaches a signed attestation linking the publish to
+      # this exact workflow run (visible on the npm package page).
       - name: Publish to npm
-        run: pnpm publish --no-git-checks --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public --provenance
